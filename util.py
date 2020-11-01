@@ -70,9 +70,12 @@ def evaluate(model, dataset, args, sess):
 
         predictions = -model.predict(sess, [u], [seq], item_idx)
         predictions = predictions[0]
+        print('predictions', predictions)
+        print('predictions[0]', predictions[0])
 
         rank = predictions.argsort().argsort()[0]
-
+        print('rank', rank)
+        
         valid_user += 1
 
         if rank < 10:
